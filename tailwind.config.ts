@@ -21,6 +21,7 @@ export default {
 		extend: {
 			backgroundImage: {
 				'purple-gradient': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
+				'white-gradient': 'linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(240,240,240,0.9) 100%)',
 			},
 			colors: {
 				border: 'hsl(var(--border))',

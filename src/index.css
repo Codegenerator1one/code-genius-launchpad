@@ -99,3 +99,74 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .shadow-glow {
+    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.15);
+  }
+  
+  .shadow-glow-lg {
+    box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.25);
+  }
+  
+  .light-streak {
+    @apply absolute bg-white/5 blur-[25px] transform -rotate-45;
+    width: 150%;
+    height: 30px;
+  }
+  
+  .light-streak-1 {
+    @apply light-streak top-1/4 -left-1/2;
+    animation: moveStreak 8s ease-in-out infinite alternate;
+  }
+  
+  .light-streak-2 {
+    @apply light-streak top-3/4 -right-1/2;
+    animation: moveStreak 12s ease-in-out infinite alternate-reverse;
+  }
+}
+
+@keyframes moveStreak {
+  0% {
+    transform: rotate(-45deg) translateX(-20%) translateY(0);
+    opacity: 0.05;
+  }
+  100% {
+    transform: rotate(-45deg) translateX(20%) translateY(-10%);
+    opacity: 0.1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 1s ease-out forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
